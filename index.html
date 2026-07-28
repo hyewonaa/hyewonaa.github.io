@@ -1,26 +1,222 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hyewon Park</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #222;
+      background-color: #fafafa;
+    }
+
+    header {
+      background: #1f2937;
+      color: white;
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 18px;
+      margin: 5px 0;
+      color: #d1d5db;
+    }
+
+    nav {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      text-align: center;
+      padding: 15px;
+      position: sticky;
+      top: 0;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #374151;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 8px;
+      color: #111827;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #e5e7eb;
+      padding: 6px 10px;
+      margin: 5px;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+
+    .project {
+      background: white;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .project h3 {
+      margin-top: 0;
+      color: #1f2937;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #f3f4f6;
+      color: #6b7280;
+      margin-top: 60px;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Hyewon Park</h1>
-  <p>Ph.D. Candidate in Chemistry, KAIST</p>
+  <header>
+    <h1>Hyewon Park</h1>
+    <p>Ph.D. Candidate in Chemistry, KAIST</p>
+    <p>Surface Chemistry · Nanomaterials · Metal–Semiconductor Interfaces · In situ XAFS</p>
+  </header>
 
-  <h2>Research Interests</h2>
-  <p>Surface Chemistry, Nanomaterials, Metal–Semiconductor Interfaces, Photoelectrochemistry, in situ XAFS</p>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#skills">Skills</a>
+    <a href="#publications">Publications</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  <h2>About</h2>
-  <p>
-    I am a Ph.D. candidate in Chemistry at KAIST. My research focuses on surface-engineered nanomaterials,
-    metal–semiconductor interfaces, and in situ/operando characterization for photoelectrochemical energy conversion.
-  </p>
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      I am a Ph.D. candidate in Chemistry at KAIST, working on surface-engineered nanomaterials,
+      metal–semiconductor interfaces, and in situ/operando characterization for photoelectrochemical
+      energy conversion. My research focuses on understanding how surface composition, interface structure,
+      and charge transfer affect catalytic and photoelectrochemical reactivity.
+    </p>
+  </section>
 
-  <h2>Publications</h2>
-  <p>Coming soon.</p>
+  <section id="research">
+    <h2>Research</h2>
 
-  <h2>Contact</h2>
-  <p>Email: </p>
+    <div class="project">
+      <h3>Plasmonic Au@Pd Antenna–Reactor Nanoparticles</h3>
+      <p>
+        Investigated hot carrier dynamics and photoelectrochemical oxygen evolution on Au@Pd/TiO2
+        nanostructures. Combined nanoparticle synthesis, TiO2 nanotube electrode fabrication,
+        PEC measurements, FDTD simulation, and transient absorption spectroscopy.
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>Metal–Semiconductor Schottky Interfaces</h3>
+      <p>
+        Fabricated Schottky nanodiodes using e-beam evaporation and analyzed how metal type,
+        thickness, and thermal treatment affect I–V characteristics, Schottky barrier behavior,
+        and interfacial charge transfer.
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>In Situ XAFS Analysis of Photoelectrochemical Catalysts</h3>
+      <p>
+        Designed and built an in situ PEC-XAFS experimental setup at the PAL 10C Wide XAFS beamline
+        to monitor changes in oxidation state and coordination environment under reaction conditions.
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>Facet-Controlled Oxide Nanomaterials</h3>
+      <p>
+        Studied how exposed crystal facets of Cu2O and TiO2 influence interfacial charge transfer,
+        electrochemical reactivity, and charge trapping behavior.
+      </p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+
+    <p>
+      <span class="tag">Nanoparticle synthesis</span>
+      <span class="tag">Core–shell nanoparticles</span>
+      <span class="tag">E-beam evaporation</span>
+      <span class="tag">Anodizing</span>
+      <span class="tag">Electrode fabrication</span>
+      <span class="tag">SEM</span>
+      <span class="tag">TEM</span>
+      <span class="tag">XRD</span>
+      <span class="tag">XPS</span>
+      <span class="tag">ICP-MS</span>
+      <span class="tag">In situ XAFS</span>
+      <span class="tag">FDTD simulation</span>
+      <span class="tag">I–V analysis</span>
+      <span class="tag">Photoelectrochemistry</span>
+      <span class="tag">Python</span>
+    </p>
+  </section>
+
+  <section id="publications">
+    <h2>Selected Publications</h2>
+
+    <p>
+      <strong>Hyewon Park†</strong>, Seunghyun Chun†, Jeong Hoon Lee†, et al.,
+      “Impact of Hot Carrier Dynamics on Photoelectrocatalytic Activity on Au@Pd Antenna-Reactor Nanoparticles,”
+      <em>Journal of the American Chemical Society</em>, 2025.
+    </p>
+
+    <p>
+      Eunbi Kang†, Jinho Seo†, <strong>Hyewon Park†</strong>, et al.,
+      “Engineering Ultrathin Alloy Shell in Au@AuPd Core-Shell Nanoparticles for Efficient Plasmon-Driven Photocatalysis,”
+      <em>Advanced Materials Interfaces</em>, 2024.
+    </p>
+
+    <p>
+      Pradeepta Babu†, <strong>Hyewon Park†</strong>, Jeong Young Park,
+      “One-Pot Synthesis of a Novel Visible Light-Active Metal-Free Polymer within the Graphitic Carbon Nitride Family,”
+      <em>The Journal of Physical Chemistry C</em>, 2025.
+    </p>
+
+    <p>
+      <a href="#">View full publication list</a>
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: your-email@example.com</p>
+    <p>Google Scholar: Add your link</p>
+    <p>LinkedIn: Add your link</p>
+    <p>CV: <a href="#">Download CV</a></p>
+  </section>
+
+  <footer>
+    <p>© 2026 Hyewon Park</p>
+  </footer>
 </body>
 </html>
