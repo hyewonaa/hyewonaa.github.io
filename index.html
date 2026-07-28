@@ -4,6 +4,174 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hyewon Park</title>
+/* Stronger space mood: dense stars, galaxy glow, shooting stars */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.95), transparent 60%),
+    radial-gradient(1px 1px at 25% 35%, rgba(255,255,255,0.8), transparent 60%),
+    radial-gradient(2px 2px at 40% 15%, rgba(255,255,255,0.9), transparent 60%),
+    radial-gradient(1px 1px at 55% 28%, rgba(255,255,255,0.7), transparent 60%),
+    radial-gradient(2px 2px at 70% 22%, rgba(255,255,255,0.9), transparent 60%),
+    radial-gradient(1px 1px at 85% 38%, rgba(255,255,255,0.75), transparent 60%),
+    radial-gradient(1px 1px at 15% 60%, rgba(255,255,255,0.85), transparent 60%),
+    radial-gradient(2px 2px at 32% 75%, rgba(255,255,255,0.95), transparent 60%),
+    radial-gradient(1px 1px at 48% 62%, rgba(255,255,255,0.7), transparent 60%),
+    radial-gradient(2px 2px at 63% 78%, rgba(255,255,255,0.9), transparent 60%),
+    radial-gradient(1px 1px at 78% 58%, rgba(255,255,255,0.8), transparent 60%),
+    radial-gradient(2px 2px at 92% 72%, rgba(255,255,255,0.95), transparent 60%);
+  background-size: 260px 260px;
+  opacity: 0.8;
+  animation: starTwinkle 4s ease-in-out infinite alternate;
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 25%, rgba(45, 212, 191, 0.18), transparent 22%),
+    radial-gradient(circle at 80% 18%, rgba(168, 85, 247, 0.18), transparent 24%),
+    radial-gradient(circle at 55% 75%, rgba(59, 130, 246, 0.16), transparent 28%),
+    radial-gradient(ellipse at 50% 30%, rgba(255,255,255,0.05), transparent 55%);
+  z-index: -3;
+}
+
+@keyframes starTwinkle {
+  0% {
+    opacity: 0.45;
+    filter: brightness(0.9);
+  }
+  50% {
+    opacity: 0.9;
+    filter: brightness(1.4);
+  }
+  100% {
+    opacity: 0.6;
+    filter: brightness(1.1);
+  }
+}
+
+header {
+  overflow: hidden;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  right: -70px;
+  top: 35px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 30%, rgba(255,255,255,0.35), transparent 10%),
+    radial-gradient(circle at 50% 50%, #7c3aed 0%, #1e40af 45%, #020617 78%);
+  box-shadow:
+    0 0 55px rgba(124, 58, 237, 0.45),
+    inset -25px -25px 60px rgba(2, 6, 23, 0.75);
+  opacity: 0.72;
+  z-index: -1;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  left: -160px;
+  bottom: -220px;
+  border-radius: 50%;
+  border: 1px solid rgba(103, 232, 249, 0.22);
+  box-shadow:
+    0 0 50px rgba(34, 211, 238, 0.18),
+    inset 0 0 60px rgba(34, 211, 238, 0.08);
+  opacity: 0.8;
+  z-index: -1;
+}
+
+.shooting-star {
+  position: absolute;
+  width: 130px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.95));
+  border-radius: 999px;
+  opacity: 0;
+  transform: rotate(-35deg);
+  animation: shootingStar 5s linear infinite;
+}
+
+.shooting-star:nth-child(1) {
+  top: 20%;
+  left: -10%;
+  animation-delay: 0s;
+}
+
+.shooting-star:nth-child(2) {
+  top: 42%;
+  left: -15%;
+  animation-delay: 1.8s;
+  width: 90px;
+}
+
+.shooting-star:nth-child(3) {
+  top: 12%;
+  left: 40%;
+  animation-delay: 3.2s;
+  width: 110px;
+}
+
+.shooting-star:nth-child(4) {
+  top: 65%;
+  left: 20%;
+  animation-delay: 4.5s;
+  width: 150px;
+}
+
+@keyframes shootingStar {
+  0% {
+    opacity: 0;
+    transform: translateX(0) translateY(0) rotate(-35deg);
+  }
+  8% {
+    opacity: 1;
+  }
+  22% {
+    opacity: 0;
+    transform: translateX(360px) translateY(210px) rotate(-35deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(360px) translateY(210px) rotate(-35deg);
+  }
+}
+
+.project,
+#skills p,
+#publications li,
+#awards li,
+#education li,
+#contact {
+  box-shadow:
+    0 10px 32px rgba(2, 6, 23, 0.32),
+    0 0 20px rgba(34, 211, 238, 0.045);
+}
+
+.project:hover,
+#publications li:hover,
+#awards li:hover,
+#education li:hover {
+  border-color: rgba(103, 232, 249, 0.36);
+  box-shadow:
+    0 14px 40px rgba(2, 6, 23, 0.42),
+    0 0 24px rgba(34, 211, 238, 0.12);
+}
 
   <style>
   * {
@@ -280,6 +448,11 @@
 
 <body>
     <header>
+  <span class="shooting-star"></span>
+  <span class="shooting-star"></span>
+  <span class="shooting-star"></span>
+  <span class="shooting-star"></span>
+
   <h1>Hyewon Park</h1>
   <p>Ph.D. Candidate in Chemistry, KAIST</p>
   <p>Surface Chemistry · Nanomaterials · Metal–Semiconductor Interfaces · In situ XAFS</p>
