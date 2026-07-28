@@ -5,401 +5,438 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hyewon Park</title>
 
-
   <style>
-  * {
-    box-sizing: border-box;
-  }
+    * {
+      box-sizing: border-box;
+    }
 
-  html {
-    scroll-behavior: smooth;
-  }
+    html {
+      scroll-behavior: smooth;
+    }
 
-  body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.7;
-    color: #e5e7eb;
-    background:
-      radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.18), transparent 25%),
-      radial-gradient(circle at 80% 10%, rgba(34, 211, 238, 0.18), transparent 20%),
-      radial-gradient(circle at 50% 80%, rgba(168, 85, 247, 0.14), transparent 25%),
-      linear-gradient(180deg, #050816 0%, #0b1026 45%, #111936 100%);
-    position: relative;
-    overflow-x: hidden;
-  }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+      color: #e5e7eb;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(99, 102, 241, 0.14), transparent 18%),
+        radial-gradient(circle at 24% 58%, rgba(34, 211, 238, 0.10), transparent 22%),
+        radial-gradient(circle at 58% 78%, rgba(168, 85, 247, 0.08), transparent 24%),
+        linear-gradient(180deg, #040713 0%, #0a1025 45%, #101833 100%);
+      position: relative;
+      overflow-x: hidden;
+    }
 
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    background-image:
-      radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.9), transparent 50%),
-      radial-gradient(1.5px 1.5px at 120px 80px, rgba(255,255,255,0.7), transparent 50%),
-      radial-gradient(2px 2px at 220px 180px, rgba(255,255,255,0.8), transparent 50%),
-      radial-gradient(1.5px 1.5px at 320px 40px, rgba(255,255,255,0.6), transparent 50%),
-      radial-gradient(2px 2px at 420px 140px, rgba(255,255,255,0.7), transparent 50%),
-      radial-gradient(1.5px 1.5px at 520px 240px, rgba(255,255,255,0.8), transparent 50%),
-      radial-gradient(2px 2px at 680px 90px, rgba(255,255,255,0.7), transparent 50%),
-      radial-gradient(1.5px 1.5px at 760px 210px, rgba(255,255,255,0.8), transparent 50%),
-      radial-gradient(2px 2px at 880px 60px, rgba(255,255,255,0.75), transparent 50%),
-      radial-gradient(1.5px 1.5px at 980px 190px, rgba(255,255,255,0.6), transparent 50%);
-    background-repeat: repeat;
-    background-size: 1000px 300px;
-    opacity: 0.55;
-    animation: twinkle 8s linear infinite;
-  }
+    /* Static random star field */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -2;
+      opacity: 0.95;
+      background-image:
+        radial-gradient(1px 1px at 3% 8%, rgba(255,255,255,0.95), transparent 60%),
+        radial-gradient(2px 2px at 7% 21%, rgba(255,255,255,0.55), transparent 60%),
+        radial-gradient(1.5px 1.5px at 11% 35%, rgba(255,255,255,0.80), transparent 60%),
+        radial-gradient(1px 1px at 15% 12%, rgba(255,255,255,0.45), transparent 60%),
+        radial-gradient(2px 2px at 18% 48%, rgba(255,255,255,0.90), transparent 60%),
+        radial-gradient(1px 1px at 22% 27%, rgba(255,255,255,0.35), transparent 60%),
+        radial-gradient(1.5px 1.5px at 26% 66%, rgba(255,255,255,0.78), transparent 60%),
+        radial-gradient(2px 2px at 31% 14%, rgba(255,255,255,0.60), transparent 60%),
+        radial-gradient(1px 1px at 34% 41%, rgba(255,255,255,0.95), transparent 60%),
+        radial-gradient(1.5px 1.5px at 38% 23%, rgba(255,255,255,0.50), transparent 60%),
+        radial-gradient(2px 2px at 42% 58%, rgba(255,255,255,0.82), transparent 60%),
+        radial-gradient(1px 1px at 46% 10%, rgba(255,255,255,0.42), transparent 60%),
+        radial-gradient(1.5px 1.5px at 49% 33%, rgba(255,255,255,0.88), transparent 60%),
+        radial-gradient(2px 2px at 53% 71%, rgba(255,255,255,0.66), transparent 60%),
+        radial-gradient(1px 1px at 57% 17%, rgba(255,255,255,0.30), transparent 60%),
+        radial-gradient(1.5px 1.5px at 61% 44%, rgba(255,255,255,0.92), transparent 60%),
+        radial-gradient(2px 2px at 66% 9%, rgba(255,255,255,0.58), transparent 60%),
+        radial-gradient(1px 1px at 69% 37%, rgba(255,255,255,0.76), transparent 60%),
+        radial-gradient(1.5px 1.5px at 73% 60%, rgba(255,255,255,0.43), transparent 60%),
+        radial-gradient(2px 2px at 77% 24%, rgba(255,255,255,0.96), transparent 60%),
+        radial-gradient(1px 1px at 81% 52%, rgba(255,255,255,0.33), transparent 60%),
+        radial-gradient(1.5px 1.5px at 84% 15%, rgba(255,255,255,0.72), transparent 60%),
+        radial-gradient(2px 2px at 88% 68%, rgba(255,255,255,0.87), transparent 60%),
+        radial-gradient(1px 1px at 91% 29%, rgba(255,255,255,0.48), transparent 60%),
+        radial-gradient(1.5px 1.5px at 95% 47%, rgba(255,255,255,0.94), transparent 60%),
+        radial-gradient(2px 2px at 97% 11%, rgba(255,255,255,0.40), transparent 60%);
+      background-repeat: no-repeat;
+    }
 
-  @keyframes twinkle {
-    0% { opacity: 0.45; }
-    50% { opacity: 0.7; }
-    100% { opacity: 0.45; }
-  }
+    /* Soft nebula glow */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -3;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(34, 211, 238, 0.13), transparent 18%),
+        radial-gradient(circle at 16% 42%, rgba(168, 85, 247, 0.11), transparent 16%),
+        radial-gradient(circle at 24% 72%, rgba(59, 130, 246, 0.09), transparent 18%),
+        radial-gradient(circle at 72% 22%, rgba(255,255,255,0.03), transparent 12%);
+    }
 
-  header {
-    text-align: center;
-    padding: 100px 20px 90px;
-    position: relative;
-    background:
-      radial-gradient(circle at top, rgba(56, 189, 248, 0.16), transparent 35%),
-      radial-gradient(circle at 70% 20%, rgba(168, 85, 247, 0.18), transparent 25%),
-      transparent;
-  }
+    header {
+      text-align: center;
+      padding: 92px 20px 76px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 18% 28%, rgba(34, 211, 238, 0.10), transparent 18%),
+        radial-gradient(circle at 24% 60%, rgba(168, 85, 247, 0.08), transparent 20%),
+        transparent;
+    }
 
-  header h1 {
-    font-size: 54px;
-    margin: 0 0 10px;
-    color: #ffffff;
-    letter-spacing: 0.5px;
-    text-shadow: 0 0 18px rgba(96, 165, 250, 0.2);
-  }
+    header::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      left: -170px;
+      top: -60px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 40% 40%, rgba(255,255,255,0.08), transparent 18%),
+        radial-gradient(circle at 50% 50%, rgba(34, 211, 238, 0.10), transparent 45%),
+        radial-gradient(circle at 55% 52%, rgba(99, 102, 241, 0.08), transparent 62%);
+      box-shadow:
+        0 0 60px rgba(34, 211, 238, 0.08),
+        inset 0 0 60px rgba(168, 85, 247, 0.05);
+      z-index: -1;
+      filter: blur(2px);
+    }
 
-  header p {
-    font-size: 18px;
-    margin: 6px 0;
-    color: #cbd5e1;
-  }
+    header::after {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      left: -260px;
+      bottom: -260px;
+      border-radius: 50%;
+      border: 1px solid rgba(103, 232, 249, 0.14);
+      box-shadow:
+        0 0 35px rgba(34, 211, 238, 0.08),
+        inset 0 0 30px rgba(34, 211, 238, 0.04);
+      z-index: -1;
+    }
 
-  header p:last-child {
-    color: #a5f3fc;
-    font-weight: 500;
-  }
-
-  .hero-buttons {
-    margin-top: 28px;
-  }
-
-  .hero-buttons a {
-    display: inline-block;
-    margin: 6px;
-    padding: 11px 18px;
-    border-radius: 999px;
-    text-decoration: none;
-    color: #ecfeff;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(125, 211, 252, 0.25);
-    backdrop-filter: blur(10px);
-    font-weight: 700;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-  }
-
-  .hero-buttons a:hover {
-    transform: translateY(-2px);
-    background: rgba(103, 232, 249, 0.12);
-    box-shadow: 0 10px 28px rgba(34, 211, 238, 0.15);
-  }
-
-  nav {
-    background: rgba(9, 14, 34, 0.72);
-    backdrop-filter: blur(14px);
-    border-top: 1px solid rgba(255,255,255,0.06);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    text-align: center;
-    padding: 14px 10px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-
-  nav a {
-    display: inline-block;
-    margin: 5px 12px;
-    text-decoration: none;
-    color: #cbd5e1;
-    font-weight: 700;
-    font-size: 14px;
-    transition: color 0.2s ease, transform 0.2s ease;
-  }
-
-  nav a:hover {
-    color: #67e8f9;
-    transform: translateY(-1px);
-  }
-
-  section {
-    max-width: 940px;
-    margin: 58px auto;
-    padding: 0 22px;
-  }
-
-  h2 {
-    font-size: 28px;
-    color: #f8fafc;
-    margin-bottom: 24px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid rgba(103, 232, 249, 0.22);
-  }
-
-  h3 {
-    color: #a5f3fc;
-    margin-bottom: 8px;
-  }
-
-  p, li {
-    font-size: 16px;
-    color: #dbe4f0;
-  }
-
-  ul, ol {
-    padding-left: 24px;
-  }
-
-  li {
-    margin-bottom: 14px;
-  }
-
-  .project,
-  #skills p,
-  #publications li,
-  #awards li,
-  #contact,
-  #education li {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(148, 163, 184, 0.18);
-    border-radius: 18px;
-    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.22);
-    backdrop-filter: blur(10px);
-  }
-
-  .project {
-    padding: 24px 26px;
-    margin: 22px 0;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .project:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 14px 36px rgba(34, 211, 238, 0.12);
-  }
-
-  .project h3 {
-    margin-top: 0;
-    color: #67e8f9;
-    font-size: 21px;
-  }
-
-  #education ul,
-  #awards ul {
-    list-style: none;
-    padding-left: 0;
-  }
-
-  #education li,
-  #awards li {
-    padding: 14px 16px;
-    margin-bottom: 12px;
-  }
-
-  #skills h3 {
-    margin-top: 24px;
-    color: #67e8f9;
-  }
-
-  #skills p {
-    padding: 14px 16px;
-  }
-
-  #publications ol {
-    padding-left: 22px;
-  }
-
-  #publications li {
-    padding: 16px 18px;
-  }
-
-  #contact {
-    padding: 28px 30px;
-  }
-
-  a {
-    color: #67e8f9;
-  }
-
-  a:hover {
-    color: #a5f3fc;
-  }
-
-  strong {
-    color: #ffffff;
-  }
-
-  em {
-    color: #c4b5fd;
-  }
-
-  footer {
-    text-align: center;
-    padding: 34px;
-    background: rgba(5, 8, 22, 0.9);
-    color: #94a3b8;
-    margin-top: 70px;
-    border-top: 1px solid rgba(255,255,255,0.06);
-  }
-
-  @media (max-width: 700px) {
     header h1 {
-      font-size: 38px;
+      font-size: 54px;
+      margin: 0 0 10px;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+      text-shadow: 0 0 18px rgba(96, 165, 250, 0.2);
     }
 
     header p {
-      font-size: 16px;
+      font-size: 18px;
+      margin: 6px 0;
+      color: #cbd5e1;
+    }
+
+    header p:last-of-type {
+      color: #a5f3fc;
+      font-weight: 500;
+    }
+
+    .hero-buttons {
+      margin-top: 28px;
+    }
+
+    .hero-buttons a {
+      display: inline-block;
+      margin: 6px;
+      padding: 11px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      color: #ecfeff;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(125, 211, 252, 0.25);
+      backdrop-filter: blur(10px);
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .hero-buttons a:hover {
+      background: rgba(103, 232, 249, 0.12);
+      box-shadow: 0 10px 28px rgba(34, 211, 238, 0.15);
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      max-width: 760px;
+      margin: 38px auto 0;
+      padding: 18px 24px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.055);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 12px 32px rgba(2, 6, 23, 0.24);
+    }
+
+    .hero-stats div {
+      flex: 1;
+      text-align: center;
+      padding: 4px 18px;
+      border-right: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .hero-stats div:last-child {
+      border-right: none;
+    }
+
+    .hero-stats strong {
+      display: block;
+      font-size: 28px;
+      line-height: 1.1;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-stats span {
+      display: block;
+      margin-top: 7px;
+      font-size: 12px;
+      color: #a5f3fc;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+    }
+
+    nav {
+      background: rgba(9, 14, 34, 0.72);
+      backdrop-filter: blur(14px);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+      padding: 14px 10px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     nav a {
-      margin: 4px 7px;
-      font-size: 13px;
+      display: inline-block;
+      margin: 5px 12px;
+      text-decoration: none;
+      color: #cbd5e1;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #67e8f9;
     }
 
     section {
-      margin: 42px auto;
+      max-width: 940px;
+      margin: 52px auto;
+      padding: 0 22px;
     }
-  }
 
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.7;
-  color: #e5e7eb;
-  background:
-    radial-gradient(circle at 18% 18%, rgba(99, 102, 241, 0.14), transparent 18%),
-    radial-gradient(circle at 24% 58%, rgba(34, 211, 238, 0.10), transparent 22%),
-    radial-gradient(circle at 58% 78%, rgba(168, 85, 247, 0.08), transparent 24%),
-    linear-gradient(180deg, #040713 0%, #0a1025 45%, #101833 100%);
-  position: relative;
-  overflow-x: hidden;
-}
+    h2 {
+      font-size: 28px;
+      color: #f8fafc;
+      margin-bottom: 24px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid rgba(103, 232, 249, 0.22);
+    }
 
-/* static star field */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: -2;
-  opacity: 0.95;
-  background-image:
-    radial-gradient(1px 1px at 3% 8%, rgba(255,255,255,0.95), transparent 60%),
-    radial-gradient(2px 2px at 7% 21%, rgba(255,255,255,0.55), transparent 60%),
-    radial-gradient(1.5px 1.5px at 11% 35%, rgba(255,255,255,0.80), transparent 60%),
-    radial-gradient(1px 1px at 15% 12%, rgba(255,255,255,0.45), transparent 60%),
-    radial-gradient(2px 2px at 18% 48%, rgba(255,255,255,0.90), transparent 60%),
-    radial-gradient(1px 1px at 22% 27%, rgba(255,255,255,0.35), transparent 60%),
-    radial-gradient(1.5px 1.5px at 26% 66%, rgba(255,255,255,0.78), transparent 60%),
-    radial-gradient(2px 2px at 31% 14%, rgba(255,255,255,0.60), transparent 60%),
-    radial-gradient(1px 1px at 34% 41%, rgba(255,255,255,0.95), transparent 60%),
-    radial-gradient(1.5px 1.5px at 38% 23%, rgba(255,255,255,0.50), transparent 60%),
-    radial-gradient(2px 2px at 42% 58%, rgba(255,255,255,0.82), transparent 60%),
-    radial-gradient(1px 1px at 46% 10%, rgba(255,255,255,0.42), transparent 60%),
-    radial-gradient(1.5px 1.5px at 49% 33%, rgba(255,255,255,0.88), transparent 60%),
-    radial-gradient(2px 2px at 53% 71%, rgba(255,255,255,0.66), transparent 60%),
-    radial-gradient(1px 1px at 57% 17%, rgba(255,255,255,0.30), transparent 60%),
-    radial-gradient(1.5px 1.5px at 61% 44%, rgba(255,255,255,0.92), transparent 60%),
-    radial-gradient(2px 2px at 66% 9%, rgba(255,255,255,0.58), transparent 60%),
-    radial-gradient(1px 1px at 69% 37%, rgba(255,255,255,0.76), transparent 60%),
-    radial-gradient(1.5px 1.5px at 73% 60%, rgba(255,255,255,0.43), transparent 60%),
-    radial-gradient(2px 2px at 77% 24%, rgba(255,255,255,0.96), transparent 60%),
-    radial-gradient(1px 1px at 81% 52%, rgba(255,255,255,0.33), transparent 60%),
-    radial-gradient(1.5px 1.5px at 84% 15%, rgba(255,255,255,0.72), transparent 60%),
-    radial-gradient(2px 2px at 88% 68%, rgba(255,255,255,0.87), transparent 60%),
-    radial-gradient(1px 1px at 91% 29%, rgba(255,255,255,0.48), transparent 60%),
-    radial-gradient(1.5px 1.5px at 95% 47%, rgba(255,255,255,0.94), transparent 60%),
-    radial-gradient(2px 2px at 97% 11%, rgba(255,255,255,0.40), transparent 60%);
-  background-repeat: no-repeat;
-}
+    h3 {
+      color: #a5f3fc;
+      margin-bottom: 8px;
+    }
 
-/* soft nebula glow, mostly left side */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: -3;
-  background:
-    radial-gradient(circle at 12% 18%, rgba(34, 211, 238, 0.13), transparent 18%),
-    radial-gradient(circle at 16% 42%, rgba(168, 85, 247, 0.11), transparent 16%),
-    radial-gradient(circle at 24% 72%, rgba(59, 130, 246, 0.09), transparent 18%),
-    radial-gradient(circle at 72% 22%, rgba(255,255,255,0.03), transparent 12%);
-}
+    p, li {
+      font-size: 16px;
+      color: #dbe4f0;
+    }
 
-/* header space glow only on the left side */
-header {
-  text-align: center;
-  padding: 100px 20px 90px;
-  position: relative;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 18% 28%, rgba(34, 211, 238, 0.10), transparent 18%),
-    radial-gradient(circle at 24% 60%, rgba(168, 85, 247, 0.08), transparent 20%),
-    transparent;
-}
+    ul, ol {
+      padding-left: 24px;
+    }
 
-header::before {
-  content: "";
-  position: absolute;
-  width: 420px;
-  height: 420px;
-  left: -170px;
-  top: -60px;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at 40% 40%, rgba(255,255,255,0.08), transparent 18%),
-    radial-gradient(circle at 50% 50%, rgba(34, 211, 238, 0.10), transparent 45%),
-    radial-gradient(circle at 55% 52%, rgba(99, 102, 241, 0.08), transparent 62%);
-  box-shadow:
-    0 0 60px rgba(34, 211, 238, 0.08),
-    inset 0 0 60px rgba(168, 85, 247, 0.05);
-  z-index: -1;
-  filter: blur(2px);
-}
+    li {
+      margin-bottom: 14px;
+    }
 
-header::after {
-  content: "";
-  position: absolute;
-  width: 520px;
-  height: 520px;
-  left: -260px;
-  bottom: -260px;
-  border-radius: 50%;
-  border: 1px solid rgba(103, 232, 249, 0.14);
-  box-shadow:
-    0 0 35px rgba(34, 211, 238, 0.08),
-    inset 0 0 30px rgba(34, 211, 238, 0.04);
-  z-index: -1;
-}
+    .project,
+    #skills p,
+    #publications li,
+    #awards li,
+    #education li,
+    #contact {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: 18px;
+      box-shadow:
+        0 10px 32px rgba(2, 6, 23, 0.32),
+        0 0 20px rgba(34, 211, 238, 0.045);
+      backdrop-filter: blur(10px);
+    }
 
-</style>
+    .project {
+      padding: 24px 26px;
+      margin: 22px 0;
+    }
+
+    .project:hover,
+    #publications li:hover,
+    #awards li:hover,
+    #education li:hover {
+      border-color: rgba(103, 232, 249, 0.36);
+      box-shadow:
+        0 14px 40px rgba(2, 6, 23, 0.42),
+        0 0 24px rgba(34, 211, 238, 0.12);
+    }
+
+    .project h3 {
+      margin-top: 0;
+      color: #67e8f9;
+      font-size: 21px;
+    }
+
+    #education ul,
+    #awards ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    #education li,
+    #awards li {
+      padding: 14px 16px;
+      margin-bottom: 12px;
+    }
+
+    #skills h3 {
+      margin-top: 24px;
+      color: #67e8f9;
+    }
+
+    #skills p {
+      padding: 14px 16px;
+    }
+
+    #publications ol {
+      padding-left: 22px;
+    }
+
+    #publications li {
+      padding: 16px 18px;
+    }
+
+    #contact {
+      padding: 28px 30px;
+    }
+
+    a {
+      color: #67e8f9;
+    }
+
+    a:hover {
+      color: #a5f3fc;
+    }
+
+    strong {
+      color: #ffffff;
+    }
+
+    em {
+      color: #c4b5fd;
+    }
+
+    footer {
+      text-align: center;
+      padding: 34px;
+      background: rgba(5, 8, 22, 0.9);
+      color: #94a3b8;
+      margin-top: 70px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    @media (max-width: 700px) {
+      header {
+        padding: 72px 18px 58px;
+      }
+
+      header h1 {
+        font-size: 38px;
+      }
+
+      header p {
+        font-size: 16px;
+      }
+
+      nav a {
+        margin: 4px 7px;
+        font-size: 13px;
+      }
+
+      section {
+        margin: 42px auto;
+      }
+
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 16px;
+      }
+
+      .hero-stats div {
+        border-right: none;
+        padding: 8px 10px;
+      }
+
+      .hero-stats strong {
+        font-size: 24px;
+      }
+
+      .hero-stats span {
+        font-size: 11px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <header>
-  <h1>Hyewon Park</h1>
-  <p>Ph.D. Candidate in Chemistry, KAIST</p>
-  <p>Surface Chemistry · Nanomaterials · Metal–Semiconductor Interfaces · In situ XAFS</p>
+  <header>
+    <h1>Hyewon Park</h1>
+    <p>Ph.D. Candidate in Chemistry, KAIST</p>
+    <p>Surface Chemistry · Nanomaterials · Metal–Semiconductor Interfaces · In situ XAFS</p>
 
+    <div class="hero-buttons">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+    </div>
 
-</header>
+    <div class="hero-stats">
+      <div>
+        <strong>9</strong>
+        <span>Publications</span>
+      </div>
+      <div>
+        <strong>3</strong>
+        <span>Co-first Papers</span>
+      </div>
+      <div>
+        <strong>4</strong>
+        <span>Awards</span>
+      </div>
+      <div>
+        <strong>5+</strong>
+        <span>Years Research</span>
+      </div>
+    </div>
+  </header>
+
   <nav>
     <a href="#about">About</a>
     <a href="#education">Education</a>
@@ -408,7 +445,7 @@ header::after {
     <a href="#publications">Publications</a>
     <a href="#awards">Awards</a>
     <a href="#contact">Contact</a>
-  </nav> 
+  </nav>
 
   <section id="about">
     <h2>About</h2>
@@ -421,14 +458,14 @@ header::after {
   </section>
 
   <section id="education">
-  <h2>Education</h2>
-  <ul>
-    <li><strong>KAIST</strong>, Department of Chemistry, Ph.D. expected, 2026</li>
-    <li><strong>Yonsei University</strong>, Department of Chemistry, B.S., 2021</li>
-    <li><strong>Konkuk University</strong>, Energy Engineering, 2019</li>
-    <li><strong>Daeil Foreign Language High School</strong>, Japanese Major, 2016</li>
-  </ul>
-</section>
+    <h2>Education</h2>
+    <ul>
+      <li><strong>KAIST</strong>, Department of Chemistry, Ph.D. expected, 2026</li>
+      <li><strong>Yonsei University</strong>, Department of Chemistry, B.S., 2021</li>
+      <li><strong>Konkuk University</strong>, Energy Engineering, 2019</li>
+      <li><strong>Daeil Foreign Language High School</strong>, Japanese Major, 2016</li>
+    </ul>
+  </section>
 
   <section id="research">
     <h2>Research</h2>
@@ -456,6 +493,14 @@ header::after {
       <p>
         Designed and built an in situ PEC-XAFS experimental setup at the PAL 10C Wide XAFS beamline
         to monitor changes in oxidation state and coordination environment under reaction conditions.
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>Facet-Controlled Oxide Nanomaterials</h3>
+      <p>
+        Studied how exposed crystal facets of Cu2O and TiO2 influence interfacial charge transfer,
+        electrochemical reactivity, and charge trapping behavior.
       </p>
     </div>
   </section>
